@@ -9,6 +9,32 @@ Spring 2025 Final Project
 
 ---
 
+## Project Overview
+
+Coral reefs play a vital ecological and cultural role, especially in Hawaiʻi. However, with increasing global temperatures, **coral bleaching** is a growing threat. Traditional monitoring methods are manual and slow. In this project, we compare three different machine learning approaches for automating coral health classification:
+
+- **CNN (Convolutional Neural Network)** – deep learning baseline
+- **KNN with Color Feature Extraction** – novel lightweight approach
+- **Gradient Boosting with Feature Engineering** – structured ML solution
+
+Our models were trained on a dataset of over 9,900 labeled coral images provided by NOAA. All code and feature extraction pipelines are included in this repository.
+
+---
+
+## Structure
+
+```bash
+📁 ICS435-CORAL-BLEACHING-PROJECT/
+├── gradient-boosting.ipynb        # Notebook for feature extraction + Gradient Boosting
+├── cnn_model.ipynb                # (Optional) Notebook for CNN baseline
+├── color_knn_model.ipynb          # (Optional) Notebook for color-based KNN model
+├── coral_train_features.csv       # Extracted features for Gradient Boosting
+├── sample_images.png              # Sample coral image visualizations
+├── confusion_matrix_test.png      # Model evaluation visual
+├── requirements.txt               # Required Python packages
+└── README.md                      # This file
+```
+
 ## Table of Contents
 - [Installation](#installation)
 - [Project Structure](#project-structure)
@@ -47,12 +73,19 @@ Or install them using:
 pip install -r requirements.txt
 ```
 
+
 If using Jupyter Notebooks:
 ```bash
 pip install notebook
 ```
 
 ---
+
+## Running the Project
+1. Clone the repository or download the files.
+2. Install the dependencies listed in requirements.txt.
+3. Open desired notebook file in Jupyter.
+4. Run all cells to reproduce our feature extraction, model training, and evaluation.
 
 ## Models
 
@@ -195,7 +228,3 @@ This Jupyter Notebook uses the dataset generated in Step 1 to train and evaluate
 
 - NOAA & Pacific Islands Fisheries Science Center for the dataset
 - Professor Haopeng Zhang for the project inspiration and foundational ideas
-
-
-
-
