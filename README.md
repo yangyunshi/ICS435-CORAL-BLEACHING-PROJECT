@@ -136,7 +136,7 @@ This Jupyter Notebook uses the dataset generated in Step 1 to train and evaluate
    - ROC curves for each model will be plotted to visualize performance.
    
 6. **Make Predictions**:
-   - After the models are trained, you can use them to make predictions on new data by following the provided instructions in the notebook.
+   - After the models are trained, you can use them to make predictions on new data
 
 ---
 
