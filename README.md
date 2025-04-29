@@ -1,1 +1,2 @@
-# ICS435-CORAL-BLEACHING-PROJECT
+# coral-bleaching
+ICS 435 Final Project
