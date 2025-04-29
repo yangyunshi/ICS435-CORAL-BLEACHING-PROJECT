@@ -50,6 +50,7 @@ pip install -r requirements.txt
 If using Jupyter Notebooks:
 ```bash
 pip install notebook
+```
 
 ---
 
