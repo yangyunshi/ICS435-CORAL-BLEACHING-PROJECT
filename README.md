@@ -1,7 +1,13 @@
-# ICS435-CORAL-BLEACHING-PROJECT
-# Coral Classification with Machine Learning
+# Coral Bleaching Classification with Machine Learning
 
-This project is focused on classifying coral species based on color data. The model uses different machine learning algorithms including **SVM**, **KNN**, **Logistic Regression**, **XGBoost**, and **Random Forest** for binary classification (CORAL vs CORAL_BL). The data consists of multiple columns representing color values in hexadecimal format, which are converted to RGB for model input.
+This project is focused on classifying coral images as **healthy** or **bleached** based on color data. The model uses different machine learning algorithms including **SVM**, **KNN**, **Logistic Regression**, **XGBoost**, and **Random Forest** for binary classification (CORAL vs CORAL_BL). The data consists of multiple columns representing color values in hexadecimal format, which are converted to RGB for model input. Our goal is to develop accurate, efficient, and accessible models that can assist in large-scale coral reef monitoring, particularly in resource-constrained field conditions.
+
+## Team
+Allison Ebsen, Yu Fang Ma, Frances Uy  
+ICS 435 – Machine Learning Methods  
+Spring 2025 Final Project
+
+---
 
 ## Table of Contents
 - [Installation](#installation)
@@ -16,6 +22,16 @@ This project is focused on classifying coral species based on color data. The mo
 - [Results](#results)
 - [Summary](#summary)
 
+---
+
+## Dataset
+- Source: [NOAA ESD Coral Bleaching Dataset](https://huggingface.co/datasets/akridge/NOAA-ESD-CORAL-Bleaching-Dataset)
+- 6,488 healthy coral images labeled CORAL
+- 3,432 bleached coral images labeled CORAL_BL
+- All images sourced from the Hawaiian Archipelago
+
+---
+
 ## Installation
 
 ### Requirements
@@ -25,6 +41,17 @@ To run this project, you'll need Python 3.x and the following dependencies:
 ```bash
 pip install pandas scikit-learn matplotlib seaborn xgboost
 ```
+
+Or install them using:
+```bash
+pip install -r requirements.txt
+```
+
+If using Jupyter Notebooks:
+```bash
+pip install notebook
+
+---
 
 ## Models
 
@@ -68,6 +95,23 @@ pip install pandas scikit-learn matplotlib seaborn xgboost
   - Learning rate (`learning_rate`)
   - Subsampling rate (`subsample`)
   - **Best Parameters**: Selected through Grid Search for optimal boosting performance.
+
+### Gradient Boosting
+  - n_estimators
+  - learning_rate
+  - max_depth
+  - min_samples_split
+  - min_samples_leaf
+  - subsample
+  - random_state
+
+## Model Performance (Test Set)
+
+| Model                  | Accuracy | AUC   | Pros                                  | Cons                                |
+|------------------------|----------|-------|---------------------------------------|-------------------------------------|
+| CNN (Convolutional)    | ~0.85    | N/A   | High accuracy, captures spatial data  | Requires GPU, high storage/compute  |
+| KNN + Color Extraction | ~0.82    | ~0.89 | Lightweight, interpretable, fast      | May miss texture/structural cues    |
+| Gradient Boosting      | 0.8185   | ~0.89 | Strong generalization, interpretable  | Requires manual feature extraction  |
 
 ## Results
 
@@ -138,10 +182,7 @@ This Jupyter Notebook uses the dataset generated in Step 1 to train and evaluate
 6. **Make Predictions**:
    - After the models are trained, you can use them to make predictions on new data
 
----
 
-## Author
-Allison Ebsen
 
 
 
